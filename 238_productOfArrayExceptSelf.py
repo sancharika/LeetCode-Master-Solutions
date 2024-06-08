@@ -1,5 +1,14 @@
 class Solution:
     def productExceptSelf(self, nums):
+        """
+        take postfix and prefix of the nums
+        ex:    
+        1   2   4   6  end
+    P   1   1   2   8
+    Po  48  24  6   1
+        48  24  12  8
+
+        """
         # consider res with 1 of length nums
         res = [1] * len(nums)
         # postfix, prefix to 1
