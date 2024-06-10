@@ -7,6 +7,30 @@ class ListNode:
 class Solution:
     def __init__(self):
         self.head = None
+
+    def addTwoNumbers(self, l1, l2):
+        """
+take dummy linked list add teo list val or 0 if list val none then take carry 
+curr node .next(curr val) will create node for next one
+then update all linked list to next one
+        """
+        carry = 0
+        dummy = ListNode()
+        curr = dummy
+        while l1 or l2 or carry:
+            v1 = l1.val if l1 else 0
+            v2 = l2.val if l2 else 0
+
+            val = v1 + v2 + carry
+            carry =val //10
+            val = val % 10
+            print(val)
+            curr.next = ListNode(val)
+            # for carry
+            l1 = l1.next if l1 else None
+            l2 = l2.next if l2 else None
+            curr = curr.next
+        return dummy.next
     
     def linkedList(self, value):
         node = ListNode(value)
@@ -37,24 +61,7 @@ class Solution:
         
         return ans
     
-    def addTwoNumbers(self, l1, l2):
-        carry = 0
-        dummy = ListNode()
-        curr = dummy
-        while l1 or l2 or carry:
-            v1 = l1.val if l1 else 0
-            v2 = l2.val if l2 else 0
-
-            val = v1 + v2 + carry
-            carry =val //10
-            val = val % 10
-            print(val)
-            curr.next = ListNode(val)
-            # for carry
-            l1 = l1.next if l1 else None
-            l2 = l2.next if l2 else None
-            curr = curr.next
-        return dummy.next
+    
     
 
 if "__main__":

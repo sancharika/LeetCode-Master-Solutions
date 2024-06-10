@@ -9,19 +9,23 @@ class Solution:
             # start < mid [rotated]
             #left sorted portion
             if nums[start] <= nums[mid]:
+                #ex [4, 5, 6, 7, 1, 2, 3 ] mid =7 num = 2
+                #we know num < mid we have two options 4, 5, 6 (left side) or 1, 2, 3
+                #(right side) to know which side check if num > mid or num < start
                 #if in mid < target < start
-                #search right portion
+                
                 if target > nums[mid] or target < nums[start]:
+                    #if target is smaller then start then #search right portion
                     start = mid + 1
                 #search left portion
-                else:
+                else: # target < nums[mid] or target > nums [start]
                     end = mid - 1
                 
             else:
-                #go left -> end < target <mid 
+                #go left -> if num less than mid or num greater than end 
                 if target < nums[mid] or target > nums[end]:
                     end = mid - 1
-                else:
+                else: #num greater tan mid or num less than end
                     # end >target> mid search right 
                     start = mid +1
         return -1
