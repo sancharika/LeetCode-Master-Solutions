@@ -2,6 +2,7 @@ from typing import List
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         """
+        T-> O(m*n) <- S (because of hashset)
 iterative bfs BFS to find adjacent islands
 BFS-> queue and visited to expand island
 use direction to find adjacent islands:
@@ -41,7 +42,7 @@ on true for above add to queue and visited as they are part of bfs graph
         #                 q.append((cur_r, cur_c))
         #                 visit.add((cur_r, cur_c))
 
-        #dfs
+        #recursive dfs
         def dfs(r, c):
             if (
                 r not in range(rows) or
