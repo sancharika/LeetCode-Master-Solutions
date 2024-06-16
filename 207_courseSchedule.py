@@ -1,6 +1,11 @@
 from typing import List
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        """
+create pre map for empty list then create the graph
+visit set for all course in dfs
+find if course in visited if yes then its cyclic
+        """
         #graph node: [child1, child2] for len of num course
         pre_map = {i:[] for i in range(numCourses)}
         for course, prereq in prerequisites:
@@ -11,10 +16,10 @@ class Solution:
             #return false if cyclic
             if course in visited: return False
             #premap[course] == []
-            if not pre_map[course]: return True
+            if not pre_map[course]: return True  #no prereq can posible
             visited.add(course)
             for courses in pre_map[course]:
-                #if dfs(courses) returns false
+                #if cyclic detected
                 if not dfs(courses): return False
             #remove last element to explore other dfs paths
             #and no longer visiting already visited 

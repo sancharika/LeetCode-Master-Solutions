@@ -1,5 +1,12 @@
 class TimeMap:
+    """
+hashmap = {
+    key: [value, timestamp]
+}
+binary search time stamp if timestamp >= mid return mid
+as timestamp can be equal or not exist if not exist return nearest
 
+    """
     def __init__(self):
         self.hashmap = {}
         

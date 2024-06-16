@@ -89,6 +89,7 @@ def findAllTicketSequences(tickets):
         for j in range(n):
             if tickets[i][j] == 1:
                 dep_map[i].append(j)
+    print(dep_map)    
     # take visited set and cycle and result
     visited = set()
     res = []
@@ -125,7 +126,7 @@ def findAllTicketSequences(tickets):
 tickets = [
   [0, 1, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 1],
-  [0, 0, 0, 1, 0, 0, 0, 0],
+  [0, 1, 0, 1, 0, 0, 0, 0],
   [1, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 1, 0, 0],
   [0, 0, 0, 0, 0, 0, 1, 0],
@@ -134,7 +135,7 @@ tickets = [
 ]
 findAllTicketSequences(tickets)
 # 0 → 1 → 7
-# ↑       ↓
+# ↑   ↑   ↓
 # 3 ← 2   4
 #     ↑   ↓
 #     6 ← 5
