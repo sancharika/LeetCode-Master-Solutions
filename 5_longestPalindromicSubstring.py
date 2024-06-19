@@ -3,6 +3,7 @@ class Solution:
 check left and right string is equal or not from the current string
 left and right starts from current string if odd else right strats from curr + 1
 goes unil l-- and r++ meets the condition of l>=0 and r < len of string
+keep track of window size update res if window size greater then previous one
     """
     def __init__(self):
         self.res, self.res_len = "", 0
