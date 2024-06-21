@@ -2,7 +2,8 @@ class Solution:
     def climbStairs(self, n: int) -> int:
         """
 brute force: T - O(2^n) 
-dfs decision tree from 0 to 1, 2 1 to 1, 2 2 to 1, 2 and so on
+optimal - >T - O(n) s- O(1)
+dfs decision tree from 0 to 1, 2| 1 to 1, 2 | 2 to 1, 2 and so on
 repited tree from 2 to n-1
 to avoid repeted storing use memoization
 stair: 0 1 2 3 4 5
@@ -13,7 +14,7 @@ keep sliding two pointer n-1 time with 1 having sum of curr two
 and swaping second pointer with first
         """
         one, two = 1, 1
-        for i in range(n-1):
+        for _ in range(n-1):
             one, two = one + two, one
         return one
         

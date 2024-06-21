@@ -38,7 +38,7 @@ class Solution:
         queue = [root] if root else []
         while queue:
             val = []
-            for i in range(len(queue)):
+            for _ in range(len(queue)):
                 node = queue.pop(0)
                 val.append(node.val)
                 if node.left: queue.append(node.left)

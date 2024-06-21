@@ -11,7 +11,7 @@ class Solution:
         ##if none roort return 0
         if not root: return 0
     ##Recursive DFS T-> O(n) S->O(height) worst case O(n)
-        ## some the max of left and right with root node        
+        ## sum the max of left and right with root node        
         # return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
     ##Avoid recursion BFS T-> O(n) S->O(height) worst case O(n)
     ## BFS using queue
